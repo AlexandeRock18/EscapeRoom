@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Escape Room - Memoria UNO</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  	<style type="text/css">
+			body {
+				background: linear-gradient(to right,rgba(0, 0, 0, .8),rgba(0, 0, 0, 0.8)), url(img/bg-muerte.jpg) center top fixed no-repeat;
+          		background-size: cover;
+			}
+
+			.junto {
+				max-width: 900px;
+				width: 100%;
+				margin: 0 auto;
+				margin-top: 10px;
+				position: relative;
+			} 
+
+			img {
+				max-width: 60%;
+				height: auto;
+				margin-top: 20px;
+			}
+
+			.table:after  {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			 
+			.field {
+				width: 20%;
+				margin: 1% 1%;
+				height: 150px;
+				border: 1px solid #000;
+				border-radius: 8px;
+				float: left;
+				cursor: pointer;
+			}
+
+			.field:hover {
+			  background: #3d4252;
+			  cursor: pointer;
+			  
+			}
+
+			.interno {
+				width: 100%;
+				height: 100%;
+				transition: all 0.6s;.
+				-webkit-transition: all 0.6s;
+				transform-style: preserve-3d;
+				position: relative;
+			}
+
+			.front {
+				background: url(https://vignette1.wikia.nocookie.net/zelda/images/e/e6/Triforce.png/revision/latest?cb=20140306091117) no-repeat top center;
+				width: 100%;
+				height: 100%;
+				border-radius: 8px;
+				z-index: 2;
+				transform: rotateY(0deg);
+				-webkit-transform: rotateY(0deg);
+				-moz-transform: rotateY(0deg);
+				-o-transform: rotateY(0deg);
+			}
+
+			.volteada {
+				transform: rotateY(180deg);
+				-webkit-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-o-transform: rotateY(180deg);
+
+			}
+
+			.front, .back {
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.back {
+				transform: rotateY(180deg);
+				-webkit-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-o-transform: rotateY(180deg);
+				text-align: center;
+			}
+  	</style>
+
+  	<h1 style="color: #F44336; text-align:center;font-size: 20px; font-family: helvetica">
+  		Encuentra las parejas y obten parte del codigo
+  	</h1>
+
+  	<div class="junto">
+
+    <div class="table">
+      <div class="field" id="1">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="2">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="3">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="4">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="5">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="6">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="7">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="8">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="9">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="10">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="11">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="12">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="13">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="14">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="15">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="field" id="16">
+        <div class="interno">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  	<script type="text/javascript">
+  		$(document).ready(function () {
+  var verificador = []; //Verifica que sean las dos imagenes
+  var id = []; // Guarda el id de la carta actual
+
+  var fin = 0; // Detecta el fin
+  var fields = document.querySelectorAll(".back");
+
+  var imagenes = [
+    "img/1.jpg",
+    "img/2.jpg",
+    "img/3.jpg",
+    "img/4.jpg",
+    "img/5.jpg",
+    "img/6.jpg",
+    "img/7.jpg",
+    "img/8.jpg",
+
+    "img/1.jpg",
+    "img/2.jpg",
+    "img/3.jpg",
+    "img/4.jpg",
+    "img/5.jpg",
+    "img/6.jpg",
+    "img/7.jpg",
+    "img/8.jpg"
+  ];
+
+  function click() {
+    //Verifica el click
+    if ($(this).find(".interno").hasClass("volteada")) {
+      return;
+    }
+    $(this).find(".interno").toggleClass("volteada");
+    verificador.push($(this).find("img").attr("src"));
+    id.push($(this).attr("id"));
+    check();
+  }
+
+  $(".field").on("click", click);
+
+  function final() {
+    if (fin === 8) {
+      //Revisa que los 8 pares de cartas esten boca arriba
+      alert("Lo ha conseguido. La clave es el numero de continentes del mundo");
+    }
+  }
+
+  function rand(array) {
+    // Sortea
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
+  function inicio() {
+    var arr = rand(imagenes); // Guarda las imagenes que fueron sorteadas.
+
+    for (var i = 0; i < fields.length; i++) {
+      //Asigna imagen a tarjeta
+      var img = document.createElement("img");
+      img.src = arr[i];
+      fields[i].appendChild(img);
+    }
+  }
+
+  function check() {
+    if (verificador.length === 2) {
+      // Cuando hay dos cartas se checkea
+      $(".field").off("click", click); // Desabilita click
+      setTimeout(function () {
+        if (verificador[0] !== verificador[1]) {
+          // Si no son iguales
+          $("#" + id[0])
+            .find(".interno")
+            .removeClass("volteada"); // Voltea de nuevo la 1ra y segunda carta
+          $("#" + id[1])
+            .find(".interno")
+            .removeClass("volteada");
+
+          verificador = []; //Se vacia el array para que vuelva a chckear
+          id = [];
+          $(".field").on("click", click); // Habilita el click de nuevo
+        } else {
+          fin += 1; // Si hay un match, se suman para llegar al verificador de cartas
+          verificador = [];
+          id = [];
+          final(); // verifica si el juego acabo
+          $(".field").on("click", click);
+        }
+      }, 800);
+    }
+  }
+
+  inicio();
+});
+
+  	</script>
+  </body>
+</html>

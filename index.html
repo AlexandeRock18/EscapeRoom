@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>¡Felicidades!</title>
+    
+    <link href="felicidades/css/bootstrap.css" rel="stylesheet" />
+	  <link href="felicidades/css/coming-sssoon.css" rel="stylesheet" />    
+    
+    <!--     Fonts     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    
+
+    <script type="text/javascript">
+      function validarFormulario(){
+      var nombreUsuario = document.getElementById('nombre').value;      
+      //Texto campo obligatorio
+      if(nombreUsuario == null || nombreUsuario.length == 0 ){
+        $('#modalError').modal('show');
+        return false;
+        }
+        return true;
+      }
+    </script>
+    <script type="text/javascript">
+      window.history.forward();
+      function sinVueltaAtras(){ window.history.forward(); }
+    </script>
+    <style type="text/css">
+      .main .logo {
+        margin-top: 50px;
+      }
+      .main .motto {
+        min-height: 100px;
+      }
+      button.close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 50px;
+      }
+      .main .motto, .main .subscribe .info-text {
+        margin-top: 10px;
+      }
+      .cover.black {
+        background-color: rgba(0,0,0,.7);
+      }
+    </style>
+</head>
+
+<body onload="sinVueltaAtras();" onpageshow="if (event.persisted) sinVueltaAtras();" onunload="">
+<nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!--
+      <ul class="nav navbar-nav">
+         <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                <img src="felicidades/images/flags/ES.png"/>
+                Español 
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="felicidades/images/flags/US.png"/> English(US) <span class="label label-default">soon</span></a></li>
+                <li><a href="#"><img src="felicidades/images/flags/DE.png"/> Deutsch <span class="label label-default">soon</span></a></li>
+                <li><a href="#"><img src="felicidades/images/flags/GB.png"/> English(UK) <span class="label label-default">soon</span></a></li>
+                <li><a href="#"><img src="felicidades/images/flags/FR.png"/> Français <span class="label label-default">soon</span></a></li>
+                <li><a href="#"><img src="felicidades/images/flags/RO.png"/> Română <span class="label label-default">soon</span></a></li>
+                <li><a href="#"><img src="felicidades/images/flags/IT.png"/> Italiano <span class="label label-default">soon</span></a></li>
+                
+                <li class="divider"></li>
+
+                <li><a href="#"><img src="felicidades/images/flags/BR.png"/> Português <span class="label label-default">soon</span></a></li>
+                <li><a href="#"><img src="felicidades/images/flags/JP.png"/> 日本語 <span class="label label-default">soon</span></a></li>
+                <li><a href="#"><img src="felicidades/images/flags/TR.png"/> Türkçe <span class="label label-default">soon</span></a></li>
+             
+              </ul>
+        </li>
+
+      </ul>
+      -->
+      <ul class="nav navbar-nav navbar-right">
+        
+            <li>
+                <a href="https://www.facebook.com/" target="_blank"> 
+                    <i class="fa fa-facebook-square"></i>
+                    Facebook
+                </a>
+            </li>
+             <li>
+                <a href="https://twitter.com/?lang=es" target="_blank"> 
+                    <i class="fa fa-twitter"></i>
+                    Tweet
+                </a>
+            </li>
+       </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+<div class="main" style="background-image: url('felicidades/images/restaurant.jpg')">
+
+<!--    Change the image source '/felicidades/images/restaurant.jpg')" with your favourite image.     -->
+    
+    <div class="cover black" data-color="black"></div>
+     
+<!--   You can change the black color for the filter with those colors: blue, green, red, orange       -->
+  
+
+
+  
+
+          
+
+
+    <div class="container">
+        <h1 class="logo cursive">
+            ¡Felicidades!
+        </h1>
+<!--  H1 can have 2 designs: "logo" and "logo cursive"           -->
+        
+        <br><br>
+
+        <div class="content">
+          <div class="row">
+          <div class="col-md-10 col-md-offset-6 col-sm6-6 col-md-offset-1">
+          <div class="text-center alert alert-danger show alert-dismissible" role="alert">
+            <h4>
+            <strong>Atención
+              <br>
+            ¡Esto es un juego!</strong>
+            </h4>
+            <p>
+              PANDORA es un scape room digital que solo tiene el objetivo de entretener y nada de lo que sucede es real
+              <br>
+              fue creado única y exclusivamente para salir de la monotonía.
+            </p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        </div>
+
+            <h4 class="motto">
+              CIDE y CANAPRO desean premiarte con un viaje a Cartagena.
+              <br>
+            Tan solo envíanos tu nombre y gana.</h4>
+            <div class="subscribe">
+                <h5 class="info-text">
+                    Déjanos tu nombre. 
+                </h5>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3 ">
+                      <form class="form-inline" role="form" action="virus.php" onsubmit="return validarFormulario()">
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" type="text" autocomplete="off" class="form-control transparent" placeholder="Ingresa tu nombre aquí...">
+                          </div>
+                          <button type="submit" class="btn btn-danger btn-fill">Participa</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+             Hecho con <i class="fa fa-heart heart"></i> por <a href="#">Alexander González</a>.
+      </div>
+    </div>
+
+
+    <div class="modal" id="modalError">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="modal-title logo cursive" style="
+    color: #FF3B30;
+    text-shadow: none;
+    margin-top: 20px;
+    font-size: 3em;
+">Ingresa tu nombre</h1>
+          
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body text-center">
+          No dejes pasar esta gran oportunidad
+          <br>
+          Ingresa tu nombre y participa
+          <br>
+          No te arrepentiras
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+ </div>
+
+
+ 
+
+</body>
+    <script src="felicidades/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="felicidades/js/bootstrap.min.js" type="text/javascript"></script>
+	
+</html>

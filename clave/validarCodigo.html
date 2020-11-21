@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Validación Formulario</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>    
+  function validarFormulario(){
+    var txtUno = document.getElementById('Uno').value;
+    var txtDos = document.getElementById('Dos').value;
+    var txtTres = document.getElementById('Tres').value;
+    var txtCuatro = document.getElementById('Cuatro').value;
+
+    
+    //Texto campo obligatorio
+    if(txtUno == null || txtUno != 'R' || txtUno.length == 0 ){
+      $('#modalError').modal('show');
+      return false;
+    }
+
+    if(txtDos == null || txtDos != 'O' || txtDos.length == 0 ){
+      $('#modalError').modal('show');
+      return false;
+    }
+
+    if(txtTres == null || txtTres != 'o' || txtTres.length == 0 ){
+      $('#modalError').modal('show');
+      return false;
+    }
+
+    if(txtCuatro == null || txtCuatro != 'm' || txtCuatro.length == 0 ){
+      $('#modalError').modal('show');
+      return false;
+    }
+
+    return true;
+  }
+  </script>
+</head>
+<body>
+
+
+  <style type="text/css">
+    body {
+      background: linear-gradient(to right,rgba(0, 0, 0, .8),rgba(0, 0, 0, .8)), 
+      url(img/bg-muerte.jpg) center top fixed no-repeat;
+              background-size: cover;
+      font-family: arial;
+    }
+    label h3 {
+      color: white;
+    }
+    .centrarIngresoClave {
+      height: 100vh;
+      display: flex;
+    }
+    .centrarBoton {
+      margin: auto;
+    }
+    .form-control {
+      text-align: center;
+      font-size: 4em;
+      font-weight: 900;
+      background: transparent;
+      color: #fff;
+    }
+    .centrarBoton.btn.btn-danger {
+      font-size: 1.5em;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: #da0921;
+    }
+    label {
+      width: 100%;
+      text-align: center;
+      /*text-transform: uppercase;*/
+      font-weight: 600;
+      font-size: 0.7em;
+      color: #da0921;
+    }
+    </style>
+
+  <section class="centrarIngresoClave">
+    <?php
+      $nombre = $_GET['nombre'];
+    ?>
+
+    <div class="container">
+      <a type="button" class="btn btn-outline-light" href="../virus.php">
+      Volver a los juegos
+      </a>
+      <div class="row  h-100">
+        <div class="col-xs-12 col-sm-3 col-md-3">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
+
+          <form action="informacion-correo.html" onsubmit="return validarFormulario()">
+            <label for="nombre">
+              <h3 class="text-center">Digita la clave obtenida en cada juego para obtener el premio</h3>
+              <hr>
+            </label>
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <label>
+                  Ahorcado
+                </label>
+                <input maxlength="1" class="form-control" id="Uno" name="Uno" type="text" autocomplete="off">
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <label>
+                  Rompecabezas
+                </label>
+                <input maxlength="1" class="form-control" id="Dos" name="Dos" type="text" autocomplete="off">
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <label>
+                  Parejas
+                </label>
+                <input maxlength="1" class="form-control" id="Tres" name="Tres" type="text" autocomplete="off">
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <label>
+                  A la vista
+                </label>
+                <input maxlength="1" class="form-control" id="Cuatro" name="Cuatro" type="text" autocomplete="off">
+              </div>
+            </div>
+            <br>
+            <div class="text-center">
+              <input class="centrarBoton btn btn-danger" type="submit" value="Ingresar">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="modalError">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">ERROR</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Código no valido, vuelve a intentarlo.
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
